@@ -1,9 +1,9 @@
 const AboutUsSection = () => {
   return (
-    <section className="py-28">
+    <section className="py-28" id="about-us">
       <div className="container max-w-6xl mx-auto px-6">
         <div className="mb-20 text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cascading-deep-navy ">
             ABOUT US
           </h2>
           <p className="text-muted-foreground mt-4 text-lg leading-relaxed">
@@ -15,7 +15,7 @@ const AboutUsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 mb-28">
           <div className="flex flex-col justify-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-serif italic text-gray-700 mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif italic mb-6 text-cascading-deep-navy ">
               Who We Are
             </h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -49,7 +49,7 @@ const AboutUsSection = () => {
           />
 
           <div className="order-1 lg:order-2 flex flex-col space-y-6">
-            <h2 className="text-3xl md:text-4xl font-serif italic text-gray-700 mb-6">
+            <h2 className="text-3xl md:text-4xl font-serif italic mb-6 text-cascading-deep-navy ">
               Our Story
             </h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -75,7 +75,7 @@ const AboutUsSection = () => {
 
         <div className="bg-muted p-12 rounded-xl">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-cascading-deep-navy ">
               Why Cascading Grace?
             </h2>
             <p className="text-muted-foreground mt-3 max-w-2xl mx-auto leading-relaxed">
@@ -87,7 +87,7 @@ const AboutUsSection = () => {
 
           <div className="grid md:grid-cols-3 gap-12 text-center">
             <div>
-              <h3 className="text-3xl md:text-4xl font-serif italic text-gray-700 mb-6">
+              <h3 className="text-3xl md:text-4xl font-serif italic mb-6 text-cascading-deep-navy ">
                 Compassion
               </h3>
               <p className="text-muted-foreground text-sm">
@@ -96,7 +96,7 @@ const AboutUsSection = () => {
             </div>
 
             <div>
-              <h3 className="text-3xl md:text-4xl font-serif italic text-gray-700 mb-6">
+              <h3 className="text-3xl md:text-4xl font-serif italic mb-6 text-cascading-deep-navy ">
                 Connection
               </h3>
               <p className="text-muted-foreground text-sm">
@@ -106,7 +106,7 @@ const AboutUsSection = () => {
             </div>
 
             <div>
-              <h3 className="text-3xl md:text-4xl font-serif italic text-gray-700 mb-6">
+              <h3 className="text-3xl md:text-4xl font-serif italic mb-6 text-cascading-deep-navy ">
                 Commitment
               </h3>
               <p className="text-muted-foreground text-sm">
