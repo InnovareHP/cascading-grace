@@ -175,7 +175,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           {/* Fallback gradient when image fails to load */}
           {imageError && (
             <div
-              className={`absolute inset-0 bg-gradient-to-br ${gradientClass}`}
+              className={`absolute inset-0 bg-linear-to-br ${gradientClass}`}
             />
           )}
 
