@@ -155,74 +155,50 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     }
   };
 
-  const renderContent = () => (
-    <div className="space-y-4">
-      <p className="text-xl text-gray-700 leading-relaxed">{service.content}</p>
-
-      {service.bulletPoints && service.bulletPoints.length > 0 && (
-        <div className="mt-4">
-          <p className="font-semibold text-gray-900 mb-3">
-            {getSectionLabel(service.title)}
-          </p>
-          <ul className="list-disc list-inside space-y-2 text-xl text-gray-700 pl-2">
-            {service.bulletPoints.map((point, idx) => (
-              <li key={idx} className="leading-relaxed">
-                {point}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
-
-  const cardContent = (
-    <div
-      className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
-      onClick={() => setIsModalOpen(true)}
-    >
-      {/* Background Image Layer */}
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-        style={{
-          backgroundImage: !imageError ? `url(${service.image})` : undefined,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {/* Fallback gradient when image fails to load */}
-        {imageError && (
-          <div
-            className={`absolute inset-0 bg-gradient-to-br ${gradientClass}`}
-          />
-        )}
-
-        {/* Hidden image to detect load errors */}
-        {!imageError && (
-          <img
-            src={service.image}
-            alt=""
-            className="absolute opacity-0 pointer-events-none"
-            onError={() => setImageError(true)}
-          />
-        )}
-      </div>
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300 z-10" />
-
-      {/* Service Title Overlay */}
-      <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
-        <h3 className="text-white text-lg md:text-xl lg:text-2xl font-bold text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] leading-tight">
-          {service.title}
-        </h3>
-      </div>
-    </div>
-  );
-
   return (
     <>
-      {cardContent}
+      {/* Service Card */}
+      <div
+        className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+        onClick={() => setIsModalOpen(true)}
+      >
+        {/* Background Image Layer */}
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+          style={{
+            backgroundImage: !imageError ? `url(${service.image})` : undefined,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          {/* Fallback gradient when image fails to load */}
+          {imageError && (
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${gradientClass}`}
+            />
+          )}
+
+          {/* Hidden image to detect load errors */}
+          {!imageError && (
+            <img
+              src={service.image}
+              alt=""
+              className="absolute opacity-0 pointer-events-none"
+              onError={() => setImageError(true)}
+            />
+          )}
+        </div>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300 z-10" />
+
+        {/* Service Title Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
+          <h3 className="text-white text-lg md:text-xl lg:text-2xl font-bold text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] leading-tight">
+            {service.title}
+          </h3>
+        </div>
+      </div>
 
       {/* Modal Dialog */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
@@ -234,7 +210,28 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           </DialogHeader>
 
           <ScrollArea className="max-h-[calc(90vh-120px)] px-6 py-4">
-            <div className="pr-4">{renderContent()}</div>
+            <div className="pr-4">
+              <div className="space-y-4">
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  {service.content}
+                </p>
+
+                {service.bulletPoints && service.bulletPoints.length > 0 && (
+                  <div className="mt-4">
+                    <p className="font-semibold text-gray-900 mb-3">
+                      {getSectionLabel(service.title)}
+                    </p>
+                    <ul className="list-disc list-inside space-y-2 text-xl text-gray-700 pl-2">
+                      {service.bulletPoints.map((point, idx) => (
+                        <li key={idx} className="leading-relaxed">
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
           </ScrollArea>
         </DialogContent>
       </Dialog>
