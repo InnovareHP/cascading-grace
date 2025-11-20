@@ -2,6 +2,7 @@ import AboutHighlights from "@/components/LandingPage/AboutUsSection/AboutHighli
 import AboutUsSection from "@/components/LandingPage/AboutUsSection/AboutUsSection";
 import ContactUsSection from "@/components/LandingPage/ContactUsSection/ContactUsSection";
 import HeroSection from "@/components/LandingPage/HeroSection/HeroSection";
+import MissionVisionSection from "@/components/LandingPage/MissionVisionSection/MissionVisionSection";
 import ServicesSection from "@/components/LandingPage/ServicesSection/ServicesSection";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -13,6 +14,7 @@ function App() {
       <HeroSection />
       <AboutUsSection />
       <ServicesSection />
+      <MissionVisionSection />
       <AboutHighlights />
       <ContactUsSection />
     </>
