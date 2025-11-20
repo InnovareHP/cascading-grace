@@ -4,11 +4,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import React from "react";
 
@@ -141,16 +136,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   const [imageError, setImageError] = React.useState(false);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [isDesktop, setIsDesktop] = React.useState(false);
-
-  React.useEffect(() => {
-    const checkDesktop = () => {
-      setIsDesktop(window.innerWidth >= 1024); // lg breakpoint
-    };
-    checkDesktop();
-    window.addEventListener("resize", checkDesktop);
-    return () => window.removeEventListener("resize", checkDesktop);
-  }, []);
 
   const getSectionLabel = (title: string) => {
     switch (title) {
@@ -173,14 +158,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
   const renderContent = () => (
     <div className="space-y-4">
-      <p className="text-gray-700 leading-relaxed">{service.content}</p>
+      <p className="text-xl text-gray-700 leading-relaxed">{service.content}</p>
 
       {service.bulletPoints && service.bulletPoints.length > 0 && (
         <div className="mt-4">
           <p className="font-semibold text-gray-900 mb-3">
             {getSectionLabel(service.title)}
           </p>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 pl-2">
+          <ul className="list-disc list-inside space-y-2 text-xl text-gray-700 pl-2">
             {service.bulletPoints.map((point, idx) => (
               <li key={idx} className="leading-relaxed">
                 {point}
@@ -238,30 +223,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <>
-      {isDesktop ? (
-        <HoverCard openDelay={200} closeDelay={100}>
-          <HoverCardTrigger asChild>{cardContent}</HoverCardTrigger>
-
-          <HoverCardContent
-            side="top"
-            align="center"
-            className="w-[90vw] max-w-md p-0 shadow-2xl border-0"
-            sideOffset={10}
-          >
-            <div className="p-6 bg-white rounded-lg">
-              <h4 className="text-2xl font-bold text-gray-900 mb-4">
-                {service.title}
-              </h4>
-
-              <ScrollArea className="h-[400px] pr-4">
-                {renderContent()}
-              </ScrollArea>
-            </div>
-          </HoverCardContent>
-        </HoverCard>
-      ) : (
-        cardContent
-      )}
+      {cardContent}
 
       {/* Modal Dialog */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
@@ -294,14 +256,14 @@ const ServicesSection = () => {
             What We Offer
           </p>
           <div className="max-w-3xl lg:max-w-7xl mx-auto mt-8">
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-700 leading-relaxed">
               At Cascading Grace, our services are grounded in compassion,
               shaped by connection, and delivered with unwavering commitment. We
               provide individualized support for older adults and individuals
               with developmental disabilities in a peaceful, family-like
               environment where dignity, comfort, and belonging come first.
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed mt-4">
+            <p className="text-xl text-gray-700 leading-relaxed mt-4">
               Every aspect of our care is designed to nurture the whole person —
               body, mind, and spirit.
             </p>
