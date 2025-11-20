@@ -3,24 +3,22 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { Menu, Search } from "lucide-react";
+import { Menu } from "lucide-react";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { label: "Experience Sunrise", to: "/experience-sunrise" },
-    { label: "Care & Living", to: "/care-living" },
-    { label: "Advice & Planning", to: "/advice-planning" },
+    { label: "Home", to: "/" },
+    { label: "About Us", to: "#about-us" },
+    { label: "Services", to: "/services" },
+    { label: "Who we serve", to: "#who-we-serve" },
+    { label: "Why choose us", to: "#why-choose-us" },
+    { label: "Contact Us", to: "#contact-us" },
   ];
 
   return (
-    <header className="border-b bg-white shadow-sm ">
-      <div className="w-full text-right text-[13px] pr-6 py-2 text-gray-600 hidden md:block">
-        Pricing & Availability:{" "}
-        <span className="font-semibold">888-434-4648</span>
-      </div>
-
+    <header className="border-b bg-white shadow-sm py-2 ">
       <div className="container max-w-7xl mx-auto flex items-center justify-between h-20">
         <Link to="/" className="flex items-center">
           <img
@@ -34,7 +32,7 @@ const Header = () => {
           {links.map(({ label, to }, i) => (
             <Link
               to={to}
-              className="hover:text-orange-600 transition-colors"
+              className=" hover:text-blue-600 transition-colors"
               key={i}
             >
               {label}
@@ -43,10 +41,6 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon" className="hidden md:flex">
-            <Search className="w-5 h-5" />
-          </Button>
-
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="lg:hidden">

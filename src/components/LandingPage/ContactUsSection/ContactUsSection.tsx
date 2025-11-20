@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
+import { CreateContactEmail } from "@/services/contact/contact";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
@@ -35,8 +36,16 @@ export default function ContactUsSection() {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
+      const response = await CreateContactEmail(
+        values.name,
+        values.email,
+        values.phone,
+        values.message
+      );
+
+      console.log(response);
     } catch (error) {
       console.error(error);
     }
@@ -161,6 +170,9 @@ export default function ContactUsSection() {
                         {...field}
                         className="rounded-xl h-12"
                         placeholder="Your Phone Number"
+                        onChange={(e) => {
+                          field.onChange(Number(e.target.value));
+                        }}
                       />
                     </FormControl>
                     <FormMessage />

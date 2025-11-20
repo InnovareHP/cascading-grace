@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       <HeroSection />
-      <ServicesSection />
       <AboutUsSection />
+      <ServicesSection />
       <AboutHighlights />
       <ContactUsSection />
     </>

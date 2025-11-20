@@ -1,12 +1,14 @@
+import ContactSubmissionEmail from "@/components/Email/ContactEmail";
 import { ResendService } from "@/services/resend/resend";
 import { createFileRoute } from "@tanstack/react-router";
 import { createMiddleware, json } from "@tanstack/react-start";
+import React from "react";
 import { z } from "zod";
 
 const zodSchema = z.object({
   name: z.string().min(1),
-  email: z.string().email(),
-  phone: z.string().min(1),
+  email: z.email(),
+  phone: z.number().min(1),
   message: z.string().min(1),
 });
 
@@ -32,12 +34,15 @@ export const Route = createFileRoute("/api/contact")({
         }
 
         const response = await ResendService.emails.send({
-          from: "<contact@cascadinggrace.com>",
-          to: [email],
+          from: "contact@cascadinggrace.com",
+          to: ["markivor.glorioso@gmail.com"],
           subject: "Contact Form Submission from Cascading Grace",
-          html: `<p>Name: ${name}</p>
-          <p>Phone: ${phone}</p>
-          <p>Message: ${message}</p>`,
+          react: React.createElement(ContactSubmissionEmail, {
+            name,
+            email,
+            phone,
+            message,
+          }),
         });
 
         return json(response);

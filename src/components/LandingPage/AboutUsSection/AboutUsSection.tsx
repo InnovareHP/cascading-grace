@@ -4,7 +4,7 @@ const AboutUsSection = () => {
       <div className="container max-w-6xl mx-auto px-6">
         <div className="mb-20 text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            About Us
+            ABOUT US
           </h2>
           <p className="text-muted-foreground mt-4 text-lg leading-relaxed">
             Cascading Grace is a faith-guided Adult Foster Care home devoted to
@@ -34,7 +34,7 @@ const AboutUsSection = () => {
 
           <div>
             <img
-              src="/assets/image/about-main.jpg"
+              src="https://adagraceafc.com/_assets/media/f5cc2ee74d7ddaf5dae7bbd51815f6f5.png"
               alt="Residents and caregivers"
               className="rounded-xl object-cover w-full h-[450px]"
             />
@@ -43,7 +43,7 @@ const AboutUsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-28">
           <img
-            src="/assets/image/about-secondary.jpg"
+            src="https://adagraceafc.com/_assets/media/5d678b6b5632e9a07c1b4d2b7ab8fbd0.jpg"
             alt="Cascading Grace Home"
             className="rounded-xl object-cover w-full h-[450px] order-2 lg:order-1"
           />
