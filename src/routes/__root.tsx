@@ -3,6 +3,7 @@ import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { ThemeProvider } from "../components/theme-provider";
 
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 import appCss from "../styles.css?url";
@@ -42,6 +43,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <ThemeProvider defaultTheme="light">
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
         <TanStackDevtools
           config={{
