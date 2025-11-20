@@ -38,31 +38,30 @@ export default function ContactUsSection() {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const response = await CreateContactEmail(
+      await CreateContactEmail(
         values.name,
         values.email,
         values.phone,
         values.message
       );
-
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    }
+    } catch (error) {}
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-white to-gray-50 py-20 px-6 md:px-16 lg:px-32">
+    <section
+      className="w-full bg-blue-900 py-20 px-6 md:px-16 lg:px-32"
+      id="contact-us"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="text-center mb-14"
       >
-        <h2 className="text-4xl font-bold tracking-tight text-gray-900 mb-3">
+        <h2 className="text-4xl font-bold tracking-tight text-cascading-white mb-3">
           Get in Touch
         </h2>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+        <p className="text-gray-300 text-lg max-w-2xl mx-auto">
           We're here to help. Whether you have questions, feedback, or a project
           idea—reach out and we'll respond shortly.
         </p>
@@ -78,32 +77,36 @@ export default function ContactUsSection() {
         >
           <Card className="shadow-md rounded-2xl border-none">
             <CardContent className="p-6 flex items-start gap-4">
-              <Mail className="w-8 h-8 text-gray-700" />
+              <Mail className="w-8 h-8 text-cascading-deep-navy" />
               <div>
-                <h4 className="font-semibold text-gray-900 text-lg">Email</h4>
-                <p className="text-gray-600">support@example.com</p>
+                <h4 className="font-semibold text-cascading-deep-navy text-lg">
+                  Email
+                </h4>
+                <p className="text-cascading-deep-navy">support@example.com</p>
               </div>
             </CardContent>
           </Card>
 
           <Card className="shadow-md rounded-2xl border-none">
             <CardContent className="p-6 flex items-start gap-4">
-              <Phone className="w-8 h-8 text-gray-700" />
+              <Phone className="w-8 h-8 text-cascading-deep-navy" />
               <div>
-                <h4 className="font-semibold text-gray-900 text-lg">Phone</h4>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
+                <h4 className="font-semibold text-cascading-deep-navy text-lg">
+                  Phone
+                </h4>
+                <p className="text-cascading-deep-navy">+1 (555) 123-4567</p>
               </div>
             </CardContent>
           </Card>
 
           <Card className="shadow-md rounded-2xl border-none">
             <CardContent className="p-6 flex items-start gap-4">
-              <MapPin className="w-8 h-8 text-gray-700" />
+              <MapPin className="w-8 h-8 text-cascading-deep-navy" />
               <div>
-                <h4 className="font-semibold text-gray-900 text-lg">
+                <h4 className="font-semibold text-cascading-deep-navy text-lg">
                   Location
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-cascading-deep-navy">
                   123 Elegant Ave, Suite 500, Manila
                 </p>
               </div>
@@ -116,7 +119,7 @@ export default function ContactUsSection() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white shadow-lg rounded-2xl p-8 space-y-6 border border-gray-100"
+          className="bg-cascading-deep-navy shadow-lg rounded-2xl p-8 space-y-6 border border-gray-100"
         >
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -126,11 +129,11 @@ export default function ContactUsSection() {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel className="text-cascading-white">Name</FormLabel>
                     <FormControl>
                       <Input
                         {...field}
-                        className="rounded-xl h-12"
+                        className="rounded-xl h-12 text-cascading-white"
                         placeholder="Your Name"
                       />
                     </FormControl>
@@ -145,11 +148,13 @@ export default function ContactUsSection() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel className="text-cascading-white">
+                      Email
+                    </FormLabel>
                     <FormControl>
                       <Input
                         {...field}
-                        className="rounded-xl h-12"
+                        className="rounded-xl h-12 text-cascading-white"
                         placeholder="Your Email"
                       />
                     </FormControl>
@@ -164,11 +169,13 @@ export default function ContactUsSection() {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone Number</FormLabel>
+                    <FormLabel className="text-cascading-white">
+                      Phone Number
+                    </FormLabel>
                     <FormControl>
                       <Input
                         {...field}
-                        className="rounded-xl h-12"
+                        className="rounded-xl h-12 text-cascading-white"
                         placeholder="Your Phone Number"
                         onChange={(e) => {
                           field.onChange(Number(e.target.value));
@@ -186,11 +193,13 @@ export default function ContactUsSection() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message</FormLabel>
+                    <FormLabel className="text-cascading-white">
+                      Message
+                    </FormLabel>
                     <FormControl>
                       <Textarea
                         {...field}
-                        className="rounded-xl min-h-[150px]"
+                        className="rounded-xl min-h-[150px] text-cascading-white"
                         placeholder="Your Message"
                       />
                     </FormControl>
@@ -201,7 +210,7 @@ export default function ContactUsSection() {
 
               <Button
                 type="submit"
-                className="w-full h-12 rounded-xl text-lg font-medium"
+                className="w-full h-12 rounded-xl text-lg font-medium bg-blue-100 text-cascading-deep-navy"
                 disabled={form.formState.isSubmitting}
               >
                 {form.formState.isSubmitting ? <Spinner /> : "Send Message"}

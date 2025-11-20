@@ -88,6 +88,13 @@ code {
   --sidebar-accent-foreground: hsl(240 5.9% 10%);
   --sidebar-border: hsl(220 13% 91%);
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
+
+  --cascading-deep-navy: #173b7a;
+  --cascading-soft-green: #4e9e45;
+  --cascading-medium-blue: #1f5eab;
+  --cascading-light-blue: #55a9dc;
+  --cascading-natural-green: #3e8b41;
+  --cascading-white: #ffffff;
 }
 
 .dark {
@@ -122,6 +129,13 @@ code {
   --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
   --sidebar-border: hsl(240 3.7% 15.9%);
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
+
+  --cascading-deep-navy: #173b7a;
+  --cascading-soft-green: #4e9e45;
+  --cascading-medium-blue: #1f5eab;
+  --cascading-light-blue: #55a9dc;
+  --cascading-natural-green: #3e8b41;
+  --cascading-white: #ffffff;
 }
 
 @layer base {
@@ -130,5 +144,24 @@ code {
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .text-cascading-deep-navy {
+    color: var(--cascading-deep-navy);
+  }
+  .text-cascading-soft-green {
+    color: var(--cascading-soft-green);
+  }
+  .text-cascading-medium-blue {
+    color: var(--cascading-medium-blue);
+  }
+  .text-cascading-light-blue {
+    color: var(--cascading-light-blue);
+  }
+  .text-cascading-natural-green {
+    color: var(--cascading-natural-green);
+  }
+  .text-cascading-white {
+    color: var(--cascading-white);
   }
 }

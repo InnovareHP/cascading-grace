@@ -1,10 +1,13 @@
 const MissionVisionSection = () => {
   return (
-    <section className="py-21 px-[1.575rem] lg:py-20 lg:px-6 bg-white">
+    <section
+      className="py-21 px-[1.575rem] lg:py-20 lg:px-6 bg-blue-900"
+      id="mission-vision"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+          <h2 className="text-4xl md:text-5xl font-bold mb-3 text-cascading-white ">
             Mission, Vision & Values
           </h2>
           <div
@@ -12,7 +15,7 @@ const MissionVisionSection = () => {
             style={{ backgroundColor: "#55A9DC" }}
           ></div>
           <div className="max-w-4xl">
-            <p className="text-xl text-gray-700 leading-relaxed">
+            <p className="text-xl text-gray-300 leading-relaxed">
               Welcome to Cascading Grace, a place where compassion flows freely
               and care is grounded in faith. Here, every resident is embraced
               with dignity, respect, and love. Our home offers a peaceful
@@ -43,7 +46,7 @@ const MissionVisionSection = () => {
                 className="w-14 h-1.5 mb-5"
                 style={{ backgroundColor: "#55A9DC" }}
               ></div>
-              <p className="text-white text-3xl md:text-4xl lg:text-5xl font-serif leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              <p className="text-cascading-white text-3xl md:text-4xl lg:text-5xl font-serif leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 Faith, compassion, and unwavering commitment.
               </p>
             </div>
@@ -51,22 +54,12 @@ const MissionVisionSection = () => {
 
           {/* Right Side - Text Content */}
           <div className="space-y-10 lg:pt-4">
-            <div>
-              <h3 className="text-3xl md:text-4xl font-serif text-gray-900 mb-3">
-                Our Mission & Vision
-              </h3>
-              <div
-                className="w-20 h-1.5 mb-8"
-                style={{ backgroundColor: "#55A9DC" }}
-              ></div>
-            </div>
-
             {/* Mission Section */}
             <div className="space-y-5 pb-8 border-b border-gray-200">
-              <h4 className="text-xl uppercase tracking-wider font-sans font-semibold text-gray-900">
+              <h4 className="text-xl uppercase tracking-wider font-sans font-semibold text-cascading-white">
                 OUR MISSION
               </h4>
-              <p className="text-xl text-gray-700 leading-relaxed">
+              <p className="text-xl text-gray-300 leading-relaxed">
                 Our mission grows from a place of faith and deep compassion for
                 those we serve. We provide tender, respectful care to a diverse
                 population of older adults and those with developmental
@@ -78,10 +71,10 @@ const MissionVisionSection = () => {
 
             {/* Vision Section */}
             <div className="space-y-5">
-              <h4 className="text-xl uppercase tracking-wider font-sans font-semibold text-gray-900">
+              <h4 className="text-xl uppercase tracking-wider font-sans font-semibold text-cascading-white">
                 OUR VISION
               </h4>
-              <p className="text-xl text-gray-700 leading-relaxed">
+              <p className="text-xl text-gray-300 leading-relaxed">
                 We envision a home where residents feel known, valued, and truly
                 cared for. Guided by faith and anchored in Compassion,
                 Connection, and Commitment, we strive to create a peaceful

@@ -11,7 +11,7 @@ const HeroSection = () => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/60 to-black/20" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto py-20 text-white">
@@ -21,15 +21,11 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl space-y-6"
         >
-          <p className="tracking-widest text-sm uppercase text-gray-300">
-            Vibrant Senior Living
-          </p>
-
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg text-cascading-light-blue ">
             Let Us Be Your Trusted Guide
           </h1>
 
-          <p className="text-lg text-gray-200 leading-relaxed max-w-xl">
+          <p className="text-lg text-gray-200 leading-relaxed max-w-xl text-cascading-soft-green">
             We’re here for you along your senior living journey. Discover a
             community that feels like home—and learn about our seasonal
             offerings.
@@ -38,7 +34,7 @@ const HeroSection = () => {
           <div className="pt-4 flex flex-wrap gap-4">
             <Button
               size="lg"
-              className="rounded-2xl px-8 py-6 text-lg font-semibold shadow-xl"
+              className="rounded-2xl px-8 py-6 text-lg font-semibold shadow-xl bg-blue-500/70"
             >
               Learn More
             </Button>

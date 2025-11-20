@@ -16,7 +16,10 @@ const AboutHighlights = () => {
   ];
 
   return (
-    <section className="py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden">
+    <section
+      className="py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden"
+      id="who-we-serve"
+    >
       {/* Subtle background decoration */}
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] pointer-events-none"></div>
 
@@ -32,7 +35,9 @@ const AboutHighlights = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               Compassionate Care for
               <br />
-              <span className="text-blue-600">THOSE WHO MATTER MOST</span>
+              <span className="text-cascading-deep-navy">
+                THOSE WHO MATTER MOST
+              </span>
             </h2>
             <p className="text-muted-foreground max-w-2xl leading-relaxed">
               Cascading Grace provides a nurturing, relationship-centered home
@@ -80,7 +85,9 @@ const AboutHighlights = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight text-end">
               Built on Trust,
               <br />
-              <span className="text-blue-600">ROOTED IN COMPASSION</span>
+              <span className="text-cascading-deep-navy">
+                ROOTED IN COMPASSION
+              </span>
             </h2>
             <p className="text-muted-foreground max-w-2xl leading-relaxed text-end">
               Families trust Cascading Grace because we offer more than care —

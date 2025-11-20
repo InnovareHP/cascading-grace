@@ -11,9 +11,9 @@ const Header = () => {
   const links = [
     { label: "Home", to: "/" },
     { label: "About Us", to: "#about-us" },
-    { label: "Services", to: "/services" },
+    { label: "Services", to: "#services" },
+    { label: "Mission, Vision & Values", to: "#mission-vision" },
     { label: "Who we serve", to: "#who-we-serve" },
-    { label: "Why choose us", to: "#why-choose-us" },
     { label: "Contact Us", to: "#contact-us" },
   ];
 
