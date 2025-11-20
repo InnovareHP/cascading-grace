@@ -118,7 +118,6 @@ const services: Service[] = [
   },
 ];
 
-// Gradient colors for each service (fallback when images aren't available)
 const gradientColors = [
   "from-blue-500 via-blue-600 to-indigo-700",
   "from-emerald-500 via-teal-600 to-cyan-700",
@@ -247,7 +246,6 @@ const ServicesSection = () => {
   return (
     <section className="py-20 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             SERVICES
@@ -270,7 +268,6 @@ const ServicesSection = () => {
           </div>
         </div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <ServiceCard
