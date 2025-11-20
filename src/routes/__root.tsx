@@ -80,12 +80,7 @@ export const Route = createRootRoute({
       { name: "apple-mobile-web-app-title", content: "Cascading Grace" },
     ],
 
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "canonical", href: "https://cascadinggrace.com" },
-    ],
+    links: [{ rel: "stylesheet", href: appCss }],
   }),
 
   shellComponent: RootDocument,
