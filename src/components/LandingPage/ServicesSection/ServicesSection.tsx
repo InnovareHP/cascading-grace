@@ -64,8 +64,7 @@ const services: Service[] = [
   },
   {
     title: "Faith-Inspired Emotional & Social Enrichment",
-    image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=800&fit=crop&q=80",
+    image: "/assets/image/services-images/service-4.jpg",
     content:
       "Because connection and spiritual grounding matter, we offer opportunities for meaningful engagement.",
     bulletPoints: [
@@ -79,8 +78,7 @@ const services: Service[] = [
   },
   {
     title: "Safe, Comfortable Living Spaces",
-    image:
-      "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&h=800&fit=crop&q=80",
+    image: "/assets/image/services-images/service-5.jpg",
     content:
       "Cascading Grace provides a warm, peaceful home environment designed for comfort, accessibility, and ease of care.",
     bulletPoints: [
@@ -96,8 +94,7 @@ const services: Service[] = [
   },
   {
     title: "Specialized Support for Developmental Disabilities",
-    image:
-      "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=800&h=800&fit=crop&q=80",
+    image: "/assets/image/services-images/service-6.jpg",
     content:
       "Our team is trained to support residents with diverse developmental needs, offering personalized care and understanding.",
     bulletPoints: [
@@ -110,16 +107,14 @@ const services: Service[] = [
   },
   {
     title: "Respite & Short-Term Stays",
-    image:
-      "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&h=800&fit=crop&q=80",
+    image: "/assets/image/services-images/service-7.jpg",
     content:
       "Cascading Grace may offer short-term stays based on availability. This service provides caregivers a much-needed break while ensuring their loved one receives safe, compassionate care.",
     bulletPoints: [],
   },
   {
     title: "Our Approach to Care",
-    image:
-      "https://images.unsplash.com/photo-1576765974257-b414b9ea0051?w=800&h=800&fit=crop&q=80",
+    image: "/assets/image/services-images/service-8.jpg",
     content:
       "At Cascading Grace, our services are grounded in compassion, shaped by connection, and delivered with unwavering commitment. We provide individualized support for older adults and individuals with developmental disabilities in a peaceful, family-like environment where dignity, comfort, and belonging come first.",
     bulletPoints: [
@@ -145,6 +140,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   const [imageError, setImageError] = React.useState(false);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isDesktop, setIsDesktop] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1024); // lg breakpoint
+    };
+    checkDesktop();
+    window.addEventListener("resize", checkDesktop);
+    return () => window.removeEventListener("resize", checkDesktop);
+  }, []);
 
   const getSectionLabel = (title: string) => {
     switch (title) {
@@ -186,72 +191,76 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     </div>
   );
 
+  const cardContent = (
+    <div
+      className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+      onClick={() => setIsModalOpen(true)}
+    >
+      {/* Background Image Layer */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
+        style={{
+          backgroundImage: !imageError ? `url(${service.image})` : undefined,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Fallback gradient when image fails to load */}
+        {imageError && (
+          <div
+            className={`absolute inset-0 bg-gradient-to-br ${gradientClass}`}
+          />
+        )}
+
+        {/* Hidden image to detect load errors */}
+        {!imageError && (
+          <img
+            src={service.image}
+            alt=""
+            className="absolute opacity-0 pointer-events-none"
+            onError={() => setImageError(true)}
+          />
+        )}
+      </div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300 z-10" />
+
+      {/* Service Title Overlay */}
+      <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
+        <h3 className="text-white text-lg md:text-xl lg:text-2xl font-bold text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] leading-tight">
+          {service.title}
+        </h3>
+      </div>
+    </div>
+  );
+
   return (
     <>
-      <HoverCard openDelay={200} closeDelay={100}>
-        <HoverCardTrigger asChild>
-          <div
-            className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
-            onClick={() => setIsModalOpen(true)}
+      {isDesktop ? (
+        <HoverCard openDelay={200} closeDelay={100}>
+          <HoverCardTrigger asChild>{cardContent}</HoverCardTrigger>
+
+          <HoverCardContent
+            side="top"
+            align="center"
+            className="w-[90vw] max-w-md p-0 shadow-2xl border-0"
+            sideOffset={10}
           >
-            {/* Background Image Layer */}
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-              style={{
-                backgroundImage: !imageError
-                  ? `url(${service.image})`
-                  : undefined,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              {/* Fallback gradient when image fails to load */}
-              {imageError && (
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${gradientClass}`}
-                />
-              )}
-
-              {/* Hidden image to detect load errors */}
-              {!imageError && (
-                <img
-                  src={service.image}
-                  alt=""
-                  className="absolute opacity-0 pointer-events-none"
-                  onError={() => setImageError(true)}
-                />
-              )}
-            </div>
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300 z-10" />
-
-            {/* Service Title Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
-              <h3 className="text-white text-lg md:text-xl lg:text-2xl font-bold text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] leading-tight">
+            <div className="p-6 bg-white rounded-lg">
+              <h4 className="text-2xl font-bold text-gray-900 mb-4">
                 {service.title}
-              </h3>
+              </h4>
+
+              <ScrollArea className="h-[400px] pr-4">
+                {renderContent()}
+              </ScrollArea>
             </div>
-          </div>
-        </HoverCardTrigger>
-
-        <HoverCardContent
-          side="top"
-          align="center"
-          className="w-[90vw] max-w-md p-0 shadow-2xl border-0"
-          sideOffset={10}
-        >
-          <div className="p-6 bg-white rounded-lg">
-            <h4 className="text-2xl font-bold text-gray-900 mb-4">
-              {service.title}
-            </h4>
-
-            <ScrollArea className="h-[400px] pr-4">
-              {renderContent()}
-            </ScrollArea>
-          </div>
-        </HoverCardContent>
-      </HoverCard>
+          </HoverCardContent>
+        </HoverCard>
+      ) : (
+        cardContent
+      )}
 
       {/* Modal Dialog */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
@@ -282,7 +291,7 @@ const ServicesSection = () => {
           <p className="text-3xl md:text-4xl font-serif italic text-gray-700 mb-6">
             What We Offer
           </p>
-          <div className="max-w-3xl mx-auto mt-8">
+          <div className="max-w-3xl lg:max-w-7xl mx-auto mt-8">
             <p className="text-lg text-gray-600 leading-relaxed">
               At Cascading Grace, our services are grounded in compassion,
               shaped by connection, and delivered with unwavering commitment. We
