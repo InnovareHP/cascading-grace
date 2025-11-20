@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Cabanatuan City",
+			"country": {
+				"code": "PH",
+				"name": "Philippines"
+			},
+			"subdivision": {
+				"code": "03",
+				"name": "Central Luzon"
+			},
+			"timezone": "Asia/Manila",
+			"latitude": 15.4903,
+			"longitude": 120.9682,
+			"postalCode": "3100"
+		},
+		"timestamp": 1762186217740
+	}
+}
