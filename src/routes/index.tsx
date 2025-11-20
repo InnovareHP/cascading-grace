@@ -1,4 +1,5 @@
 import HeroSection from "@/components/LandingPage/HeroSection/HeroSection";
+import MissionVisionSection from "@/components/LandingPage/MissionVisionSection/MissionVisionSection";
 import ServicesSection from "@/components/LandingPage/ServicesSection/ServicesSection";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
       <HeroSection />
+      <MissionVisionSection />
       <ServicesSection />
     </>
   );
