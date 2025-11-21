@@ -118,7 +118,6 @@ const services: Service[] = [
   },
 ];
 
-// Gradient colors for each service (fallback when images aren't available)
 const gradientColors = [
   "from-blue-500 via-blue-600 to-indigo-700",
   "from-emerald-500 via-teal-600 to-cyan-700",
@@ -242,32 +241,30 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
 const ServicesSection = () => {
   return (
-    <section className="py-20 px-6 bg-white">
+    <section className="py-20 px-6 bg-blue-900" id="services">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cascading-white ">
             SERVICES
           </h2>
-          <p className="text-3xl md:text-4xl font-serif italic text-gray-700 mb-6">
+          <p className="text-3xl md:text-4xl font-serif italic text-cascading-white mb-6">
             What We Offer
           </p>
           <div className="max-w-3xl lg:max-w-7xl mx-auto mt-8">
-            <p className="text-xl text-gray-700 leading-relaxed">
+            <p className="text-xl text-gray-300 leading-relaxed">
               At Cascading Grace, our services are grounded in compassion,
               shaped by connection, and delivered with unwavering commitment. We
               provide individualized support for older adults and individuals
               with developmental disabilities in a peaceful, family-like
               environment where dignity, comfort, and belonging come first.
             </p>
-            <p className="text-xl text-gray-700 leading-relaxed mt-4">
+            <p className="text-xl text-gray-300 leading-relaxed mt-4">
               Every aspect of our care is designed to nurture the whole person —
               body, mind, and spirit.
             </p>
           </div>
         </div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <ServiceCard
