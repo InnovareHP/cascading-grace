@@ -1,12 +1,6 @@
 [build]
-<<<<<<< HEAD
-  command = "npm run build"
-  publish = ".output/public"
-
-=======
   command = "vite build"
   publish = "dist/client"
 [dev]
   command = "vite dev"
   port = 3000
->>>>>>> 821b0320a446a84d8011f36bcc3937cdaa3e12b1
