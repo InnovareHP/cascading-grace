@@ -1,10 +1,12 @@
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { X } from "lucide-react";
 import React from "react";
 
 interface Service {
@@ -202,26 +204,38 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
       {/* Modal Dialog */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-[calc(100%-2rem)] sm:max-w-[calc(100%-3rem)] md:max-w-3xl max-h-[90vh] p-0">
-          <DialogHeader className="p-6 pb-4 border-b">
-            <DialogTitle className="text-3xl font-bold text-gray-900">
+        <DialogContent 
+          className="max-w-[calc(100%-2rem)] sm:max-w-[calc(100%-3rem)] md:max-w-3xl max-h-[90vh] p-0 border-2 border-[var(--cascading-medium-blue)] overflow-hidden shadow-2xl"
+          showCloseButton={false}
+        >
+          <DialogHeader 
+            className="p-6 pb-4 border-b-4 border-[var(--cascading-light-blue)] relative"
+            style={{
+              background: `linear-gradient(to right, var(--cascading-deep-navy), var(--cascading-medium-blue))`
+            }}
+          >
+            <DialogTitle className="text-3xl font-bold text-cascading-white pr-10">
               {service.title}
             </DialogTitle>
+            <DialogClose className="absolute top-4 right-4 rounded-full bg-white/10 hover:bg-white/20 text-cascading-white p-2 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cascading-light-blue focus:ring-offset-2 focus:ring-offset-transparent cursor-pointer">
+              <X className="h-5 w-5" />
+              <span className="sr-only">Close</span>
+            </DialogClose>
           </DialogHeader>
 
-          <ScrollArea className="max-h-[calc(90vh-120px)] px-6 py-4">
+          <ScrollArea className="max-h-[calc(90vh-120px)] px-6 py-4 bg-white">
             <div className="pr-4">
               <div className="space-y-4">
-                <p className="text-xl text-gray-700 leading-relaxed">
+                <p className="text-xl text-cascading-deep-navy leading-relaxed">
                   {service.content}
                 </p>
 
                 {service.bulletPoints && service.bulletPoints.length > 0 && (
                   <div className="mt-4">
-                    <p className="font-semibold text-gray-900 mb-3">
+                    <p className="font-semibold text-cascading-medium-blue mb-3 text-lg">
                       {getSectionLabel(service.title)}
                     </p>
-                    <ul className="list-disc list-inside space-y-2 text-xl text-gray-700 pl-2">
+                    <ul className="list-disc list-inside space-y-2 text-xl text-cascading-deep-navy pl-2">
                       {service.bulletPoints.map((point, idx) => (
                         <li key={idx} className="leading-relaxed">
                           {point}
@@ -247,21 +261,26 @@ const ServicesSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cascading-white ">
             SERVICES
           </h2>
-          <p className="text-3xl md:text-4xl font-serif italic text-cascading-white mb-6">
+          <p className="text-3xl md:text-4xl font-serif italic text-cascading-white mb-8">
             What We Offer
           </p>
-          <div className="max-w-3xl lg:max-w-7xl mx-auto mt-8">
-            <p className="text-xl text-gray-300 leading-relaxed">
-              At Cascading Grace, our services are grounded in compassion,
-              shaped by connection, and delivered with unwavering commitment. We
-              provide individualized support for older adults and individuals
-              with developmental disabilities in a peaceful, family-like
-              environment where dignity, comfort, and belonging come first.
-            </p>
-            <p className="text-xl text-gray-300 leading-relaxed mt-4">
-              Every aspect of our care is designed to nurture the whole person —
-              body, mind, and spirit.
-            </p>
+        </div>
+
+        <div className="mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="col-span-full">
+              <p className="text-lg md:text-xl text-gray-100 leading-relaxed mb-5 font-light">
+                At Cascading Grace, our services are grounded in compassion,
+                shaped by connection, and delivered with unwavering commitment. We
+                provide individualized support for older adults and individuals
+                with developmental disabilities in a peaceful, family-like
+                environment where dignity, comfort, and belonging come first.
+              </p>
+              <p className="text-lg md:text-xl text-gray-100 leading-relaxed font-light">
+                Every aspect of our care is designed to nurture the whole person —
+                body, mind, and spirit.
+              </p>
+            </div>
           </div>
         </div>
 
