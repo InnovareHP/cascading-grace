@@ -12,6 +12,7 @@ const Header = () => {
     { label: "Home", to: "/" },
     { label: "About Us", to: "#about-us" },
     { label: "Services", to: "#services" },
+    { label: "Gallery", to: "#gallery" },
     { label: "Mission, Vision & Values", to: "#mission-vision" },
     { label: "Who we serve", to: "#who-we-serve" },
     { label: "Contact Us", to: "#contact-us" },
