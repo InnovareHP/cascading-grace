@@ -1,18 +1,38 @@
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
 
 const AboutHighlights = () => {
   const whoWeServe = [
-    "Older adults seeking a peaceful, supportive home environment",
-    "Individuals with developmental disabilities who benefit from personalized, respectful care",
-    "Residents who thrive with structure, companionship, and a deeply relational approach",
+    {
+      text: "Older adults seeking a peaceful, supportive home environment",
+      image: "/assets/image/compassionate_1.jpg",
+    },
+    {
+      text: "Individuals with developmental disabilities who benefit from personalized, respectful care",
+      image: "/assets/image/compassionate_2.webp",
+    },
+    {
+      text: "Residents who thrive with structure, companionship, and a deeply relational approach",
+      image: "/assets/image/compassionate_3.jpg",
+    },
   ];
 
   const whyChooseUs = [
-    "Small resident capacity (6) for highly personal attention",
-    "Faith-guided, heart-centered care philosophy",
-    "Relationship-focused environment designed for connection",
-    "High emotional and physical support rooted in compassion",
+    {
+      text: "Small resident capacity (6) for highly personal attention",
+      image: "/assets/image/compassion_1.webp",
+    },
+    {
+      text: "Faith-guided, heart-centered care philosophy",
+      image: "/assets/image/compassion_2.webp",
+    },
+    {
+      text: "Relationship-focused environment designed for connection",
+      image: "/assets/image/compassion_3.webp",
+    },
+    {
+      text: "High emotional and physical support rooted in compassion",
+      image: "/assets/image/compassion_4.webp",
+    },
   ];
 
   return (
@@ -35,11 +55,9 @@ const AboutHighlights = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
               Compassionate Care for
               <br />
-              <span className="text-cascading-deep-navy">
-                THOSE WHO MATTER MOST
-              </span>
+              <span className="text-[#4e9e45]">THOSE WHO MATTER MOST</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl leading-relaxed">
+            <p className="text-slate-600 max-w-2xl leading-relaxed">
               Cascading Grace provides a nurturing, relationship-centered home
               environment, serving individuals with care, dignity, and
               personalized attention.
@@ -58,16 +76,17 @@ const AboutHighlights = () => {
                 className="group relative"
               >
                 <div className="absolute inset-0 bg-blue-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative flex items-start gap-5 bg-white shadow-lg shadow-slate-200/50 rounded-3xl p-8 border border-slate-200/60 hover:border-blue-200 transition-all duration-300 h-full">
-                  <div className="mt-1">
-                    <CheckCircle
-                      className="h-7 w-7 text-blue-600 shrink-0"
-                      strokeWidth={2.5}
-                    />
+                <div className="relative flex flex-col bg-white shadow-lg shadow-slate-200/50 rounded-3xl overflow-hidden border border-slate-200/60 hover:border-blue-200 transition-all duration-300 h-full">
+                  <img
+                    src={item.image}
+                    alt={item.text}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="flex items-start gap-5 p-8">
+                    <p className="text-slate-700 leading-relaxed text-base font-medium">
+                      {item.text}
+                    </p>
                   </div>
-                  <p className="text-slate-700 leading-relaxed text-base font-medium">
-                    {item}
-                  </p>
                 </div>
               </motion.div>
             ))}
@@ -85,11 +104,9 @@ const AboutHighlights = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight text-end">
               Built on Trust,
               <br />
-              <span className="text-cascading-deep-navy">
-                ROOTED IN COMPASSION
-              </span>
+              <span className="text-[#4e9e45]">ROOTED IN COMPASSION</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl leading-relaxed text-end">
+            <p className="text-slate-600 max-w-2xl leading-relaxed text-end">
               Families trust Cascading Grace because we offer more than care —
               we provide belonging, stability, and deep relational support, all
               within an intimate 6-resident home setting.
@@ -108,16 +125,17 @@ const AboutHighlights = () => {
                 className="group relative"
               >
                 <div className="absolute inset-0 bg-blue-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative flex items-start gap-5 bg-white shadow-lg shadow-slate-200/50 rounded-3xl p-8 border border-slate-200/60 hover:border-purple-200 transition-all duration-300 h-full">
-                  <div className="mt-1">
-                    <CheckCircle
-                      className="h-7 w-7 text-blue-600 shrink-0"
-                      strokeWidth={2.5}
-                    />
+                <div className="relative flex flex-col bg-white shadow-lg shadow-slate-200/50 rounded-3xl overflow-hidden border border-slate-200/60 hover:border-purple-200 transition-all duration-300 h-full">
+                  <img
+                    src={item.image}
+                    alt={item.text}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="flex items-start gap-5 p-8">
+                    <p className="text-slate-700 leading-relaxed text-base font-medium">
+                      {item.text}
+                    </p>
                   </div>
-                  <p className="text-slate-700 leading-relaxed text-base font-medium">
-                    {item}
-                  </p>
                 </div>
               </motion.div>
             ))}
