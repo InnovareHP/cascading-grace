@@ -7,7 +7,12 @@ const MissionVisionSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-3 text-cascading-white ">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-cascading-white flex items-center gap-4">
+            <img
+              src="/assets/image/leaves-icon.svg"
+              alt="Leaves icon"
+              className="w-10 h-10 md:w-12 md:h-12 shrink-0"
+            />
             Mission, Vision & Values
           </h2>
           <div
@@ -37,14 +42,20 @@ const MissionVisionSection = () => {
               }}
             >
               {/* Gradient Overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30"></div>
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.3))",
+                }}
+              ></div>
             </div>
 
             {/* Text Overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
               <div
-                className="w-14 h-1.5 mb-5"
-                style={{ backgroundColor: "#55A9DC" }}
+                className="w-16 md:w-24 lg:w-32 h-1.5 mb-5 transition-all duration-300"
+                style={{ backgroundColor: "#4E9E45" }}
               ></div>
               <p className="text-cascading-white text-3xl md:text-4xl lg:text-5xl font-serif leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 Faith, compassion, and unwavering commitment.
