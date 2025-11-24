@@ -1,22 +1,17 @@
 import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-} from "@/components/ui/dialog";
-import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Dialog, DialogClose, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 import React, { useState } from "react";
 
 const galleryImages = [
   "/assets/image/gallery-images/gallery-1.jpg",
   "/assets/image/gallery-images/gallery-2.jpg",
-  "/assets/image/gallery-images/gallery-3.jpg",
   "/assets/image/gallery-images/gallery-4.jpg",
   "/assets/image/gallery-images/gallery-5.jpg",
   "/assets/image/gallery-images/gallery-6.jpg",
@@ -118,7 +113,10 @@ const GallerySection = () => {
   };
 
   const handleNext = () => {
-    if (selectedImageIndex !== null && selectedImageIndex < galleryImages.length - 1) {
+    if (
+      selectedImageIndex !== null &&
+      selectedImageIndex < galleryImages.length - 1
+    ) {
       setSelectedImageIndex(selectedImageIndex + 1);
     } else if (selectedImageIndex === galleryImages.length - 1) {
       setSelectedImageIndex(0);
@@ -137,22 +135,22 @@ const GallerySection = () => {
 
   return (
     <>
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-blue-50" id="gallery">
+      <section
+        className="py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-blue-50"
+        id="gallery"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cascading-deep-navy">
-              GALLERY
-            </h2>
-            <p className="text-3xl md:text-4xl font-serif italic text-cascading-medium-blue mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-cascading-deep-navy">
               A Glimpse Into Our Home
-            </p>
+            </h2>
           </div>
 
           <div className="mb-12">
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed text-center max-w-3xl mx-auto font-light">
-              Step inside Cascading Grace and see the warm, welcoming spaces where
-              our residents find comfort, community, and care. Each image reflects
-              the peaceful, family-centered environment we've created.
+              Step inside Cascading Grace and see the warm, welcoming spaces
+              where our residents find comfort, community, and care. Each image
+              reflects the peaceful, family-centered environment we've created.
             </p>
           </div>
 
@@ -189,7 +187,10 @@ const GallerySection = () => {
 
       {/* Lightbox Modal */}
       {selectedImageIndex !== null && (
-        <Dialog open={selectedImageIndex !== null} onOpenChange={handleCloseModal}>
+        <Dialog
+          open={selectedImageIndex !== null}
+          onOpenChange={handleCloseModal}
+        >
           <DialogContent
             className="max-w-[95vw] max-h-[95vh] p-0 border-2 border-[var(--cascading-medium-blue)] overflow-hidden shadow-2xl bg-black/95"
             showCloseButton={false}
@@ -268,4 +269,3 @@ const GallerySection = () => {
 };
 
 export default GallerySection;
-
