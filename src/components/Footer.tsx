@@ -2,6 +2,16 @@ import { Link } from "@tanstack/react-router";
 import { Facebook, Globe, Linkedin, Youtube } from "lucide-react";
 
 const Footer = () => {
+  const links = [
+    { label: "Home", to: "/" },
+    { label: "About Us", to: "#about-us" },
+    { label: "Services", to: "#services" },
+    { label: "Gallery", to: "#gallery" },
+    { label: "Mission, Vision & Values", to: "#mission-vision" },
+    { label: "Who we serve", to: "#who-we-serve" },
+    { label: "Contact Us", to: "#contact-us" },
+  ];
+
   return (
     <footer className="bg-[#4e9e45] text-white">
       <div className="max-w-7xl mx-auto px-6 py-12">
@@ -13,46 +23,16 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-3 text-gray-200">
-              <li>
-                <Link
-                  to="/"
-                  className="hover:text-white transition-colors text-lg"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="#mission-vision"
-                  className="hover:text-white transition-colors text-lg"
-                >
-                  Mission & Values
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="hover:text-white transition-colors text-lg"
-                >
-                  Services Overview
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact-us"
-                  className="hover:text-white transition-colors text-lg"
-                >
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <Link
-                  to="#referral-program"
-                  className="hover:text-white transition-colors text-lg"
-                >
-                  Referral Program
-                </Link>
-              </li>
+              {links.map(({ label, to }, i) => (
+                <li key={i}>
+                  <Link
+                    to={to}
+                    className="hover:text-white transition-colors text-lg"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
