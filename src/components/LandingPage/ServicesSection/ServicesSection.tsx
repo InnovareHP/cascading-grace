@@ -196,7 +196,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
         {/* Service Title Overlay */}
         <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
-          <h3 className=" text-lg md:text-xl lg:text-2xl font-bold text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] leading-tight text-[#4e9e45]">
+          <h3 className=" text-lg md:text-xl lg:text-2xl font-bold text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] leading-tight text-white">
             {service.title}
           </h3>
         </div>
