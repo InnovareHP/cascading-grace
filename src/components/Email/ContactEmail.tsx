@@ -5,7 +5,6 @@ import {
   Head,
   Hr,
   Html,
-  Img,
   Preview,
   Section,
   Text,
@@ -35,18 +34,11 @@ export default function ContactSubmissionEmail({
         <Container className="mx-auto py-10 px-6 w-[580px] max-w-full bg-white shadow-lg rounded-2xl">
           {/* Header */}
           <Section className="text-center mb-8">
-            <Img
-              src="https://cdn-icons-png.flaticon.com/512/1047/1047711.png"
-              width="70"
-              height="70"
-              alt="Contact Icon"
-              className="mx-auto mb-4"
-            />
             <Text className="text-2xl font-bold text-gray-900">
               New Contact Form Submission
             </Text>
             <Text className="text-gray-500 text-sm mt-1">
-              Someone just reached out through your website
+              Someone just reached out through the contact form on the website.
             </Text>
           </Section>
 

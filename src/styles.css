@@ -164,4 +164,24 @@ code {
   .text-cascading-white {
     color: var(--cascading-white);
   }
+  .custom-shape-divider-top-1763973809 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+  }
+
+  .custom-shape-divider-top-1763973809 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 166px;
+  }
+
+  .custom-shape-divider-top-1763973809 .shape-fill {
+    fill: #ffffff;
+  }
 }

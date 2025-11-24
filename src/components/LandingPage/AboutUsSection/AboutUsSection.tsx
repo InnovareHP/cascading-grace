@@ -1,10 +1,10 @@
 const AboutUsSection = () => {
   return (
-    <section className="py-28" id="about-us">
-      <div className="container max-w-6xl mx-auto px-6">
+    <section id="about-us" className="relative min-h-screen">
+      <div className="container py-28 max-w-6xl mx-auto px-6">
         <div className="mb-20 text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cascading-deep-navy ">
-            ABOUT US
+            About Us
           </h2>
           <p className="text-muted-foreground mt-4 text-lg leading-relaxed">
             Cascading Grace is a faith-guided Adult Foster Care home devoted to
@@ -15,7 +15,7 @@ const AboutUsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 mb-28">
           <div className="flex flex-col justify-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-serif italic mb-6 text-cascading-deep-navy ">
+            <h2 className="text-3xl md:text-4xl mb-6 text-[#4e9e45] ">
               Who We Are
             </h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -49,7 +49,7 @@ const AboutUsSection = () => {
           />
 
           <div className="order-1 lg:order-2 flex flex-col space-y-6">
-            <h2 className="text-3xl md:text-4xl font-serif italic mb-6 text-cascading-deep-navy ">
+            <h2 className="text-3xl md:text-4xl mb-6 text-[#4e9e45] ">
               Our Story
             </h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -72,48 +72,76 @@ const AboutUsSection = () => {
             </p>
           </div>
         </div>
+      </div>
 
-        <div className="bg-muted p-12 rounded-xl">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-cascading-deep-navy ">
-              Why Cascading Grace?
-            </h2>
-            <p className="text-muted-foreground mt-3 max-w-2xl mx-auto leading-relaxed">
-              We are more than a care home—we are a place of belonging, a
-              sanctuary of peace, and a community built on faith, dignity, and
-              heartfelt service.
+      {/* new */}
+      <div className="bg-muted p-12 rounded-xl relative overflow-hidden  sm:h-[70vh] h-auto flex flex-col justify-center items-center ">
+        {/* Shape Divider */}
+        <div className="custom-shape-divider-top-1763973809 sm:block hidden">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+              className="shape-fill"
+            ></path>
+          </svg>
+        </div>
+
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cascading-deep-navy tracking-tight">
+            Why Cascading Grace?
+          </h2>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto leading-relaxed text-lg">
+            Because care should feel human. At Cascading Grace, we offer more
+            than assistance — we offer belonging, connection, and a home where
+            each resident is lovingly supported with purpose and dignity.
+          </p>
+        </div>
+
+        {/* 3 Columns */}
+        <div className="grid md:grid-cols-3 gap-12 text-center">
+          {/* Card 1 */}
+          <div className="group relative bg-white p-10 rounded-2xl shadow-md border border-slate-200 hover:border-cascading-light-blue/40 transition-all duration-300 hover:shadow-2xl">
+            <div className="absolute inset-0 bg-cascading-light-blue/10 opacity-0 blur-xl rounded-2xl group-hover:opacity-100 transition duration-500"></div>
+
+            <h3 className="relative text-3xl md:text-4xl mb-4 text-[#4e9e45]">
+              Compassion
+            </h3>
+            <p className="text-muted-foreground text-base leading-relaxed relative">
+              Gentle, wholehearted care that honors identity, emotion, and the
+              sacred worth of every individual.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 text-center">
-            <div>
-              <h3 className="text-3xl md:text-4xl font-serif italic mb-6 text-cascading-deep-navy ">
-                Compassion
-              </h3>
-              <p className="text-muted-foreground text-sm">
-                Care that honors the whole person with gentleness and empathy.
-              </p>
-            </div>
+          {/* Card 2 */}
+          <div className="group relative bg-white p-10 rounded-2xl shadow-md border border-slate-200 hover:border-cascading-light-blue/40 transition-all duration-300 hover:shadow-2xl">
+            <div className="absolute inset-0 bg-cascading-light-blue/10 opacity-0 blur-xl rounded-2xl group-hover:opacity-100 transition duration-500"></div>
 
-            <div>
-              <h3 className="text-3xl md:text-4xl font-serif italic mb-6 text-cascading-deep-navy ">
-                Connection
-              </h3>
-              <p className="text-muted-foreground text-sm">
-                Real relationships built through presence, listening, and
-                community.
-              </p>
-            </div>
+            <h3 className="relative text-3xl md:text-4xl mb-4 text-[#4e9e45]">
+              Connection
+            </h3>
+            <p className="text-muted-foreground text-base leading-relaxed relative">
+              A family-like environment built through presence, listening,
+              warmth, and truly shared life.
+            </p>
+          </div>
 
-            <div>
-              <h3 className="text-3xl md:text-4xl font-serif italic mb-6 text-cascading-deep-navy ">
-                Commitment
-              </h3>
-              <p className="text-muted-foreground text-sm">
-                Reliable, faith-guided support that residents and families can
-                trust.
-              </p>
-            </div>
+          {/* Card 3 */}
+          <div className="group relative bg-white p-10 rounded-2xl shadow-md border border-slate-200 hover:border-cascading-light-blue/40 transition-all duration-300 hover:shadow-2xl">
+            <div className="absolute inset-0 bg-cascading-light-blue/10 opacity-0 blur-xl rounded-2xl group-hover:opacity-100 transition duration-500"></div>
+
+            <h3 className="relative text-3xl md:text-4xl mb-4 text-[#4e9e45]">
+              Commitment
+            </h3>
+            <p className="text-muted-foreground text-base leading-relaxed relative">
+              Faith-led dedication to safety, stability, and unwavering support
+              — every single day.
+            </p>
           </div>
         </div>
       </div>
