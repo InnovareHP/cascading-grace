@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Globe, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const links = [
@@ -48,7 +48,7 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex justify-center md:justify-start gap-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/16aDgv2gBQ/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -58,33 +58,13 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/cascading-grace/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600 transition-colors"
               >
                 <Linkedin className="w-5 h-5" />
-              </a>
-
-              <a
-                href="https://google.com/maps"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Google Page"
-                className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600 transition-colors"
-              >
-                <Globe className="w-5 h-5" />
-              </a>
-
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600 transition-colors"
-              >
-                <Youtube className="w-5 h-5" />
               </a>
             </div>
           </div>
