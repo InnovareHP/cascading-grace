@@ -196,7 +196,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
         {/* Service Title Overlay */}
         <div className="absolute inset-0 flex items-center justify-center p-4 z-20">
-          <h3 className="text-white text-lg md:text-xl lg:text-2xl font-bold text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] leading-tight">
+          <h3 className=" text-lg md:text-xl lg:text-2xl font-bold text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] leading-tight text-[#4e9e45]">
             {service.title}
           </h3>
         </div>
@@ -204,14 +204,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
       {/* Modal Dialog */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent 
+        <DialogContent
           className="max-w-[calc(100%-2rem)] sm:max-w-[calc(100%-3rem)] md:max-w-3xl max-h-[90vh] p-0 border-2 border-[var(--cascading-medium-blue)] overflow-hidden shadow-2xl"
           showCloseButton={false}
         >
-          <DialogHeader 
+          <DialogHeader
             className="p-6 pb-4 border-b-4 border-[var(--cascading-light-blue)] relative"
             style={{
-              background: `linear-gradient(to right, var(--cascading-deep-navy), var(--cascading-medium-blue))`
+              background: `linear-gradient(to right, var(--cascading-deep-navy), var(--cascading-medium-blue))`,
             }}
           >
             <DialogTitle className="text-3xl font-bold text-cascading-white pr-10">
@@ -259,11 +259,8 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cascading-white ">
-            SERVICES
+            Services
           </h2>
-          <p className="text-3xl md:text-4xl font-serif italic text-cascading-white mb-8">
-            What We Offer
-          </p>
         </div>
 
         <div className="mb-12">
@@ -271,14 +268,15 @@ const ServicesSection = () => {
             <div className="col-span-full">
               <p className="text-lg md:text-xl text-gray-100 leading-relaxed mb-5 font-light">
                 At Cascading Grace, our services are grounded in compassion,
-                shaped by connection, and delivered with unwavering commitment. We
-                provide individualized support for older adults and individuals
-                with developmental disabilities in a peaceful, family-like
-                environment where dignity, comfort, and belonging come first.
+                shaped by connection, and delivered with unwavering commitment.
+                We provide individualized support for older adults and
+                individuals with developmental disabilities in a peaceful,
+                family-like environment where dignity, comfort, and belonging
+                come first.
               </p>
               <p className="text-lg md:text-xl text-gray-100 leading-relaxed font-light">
-                Every aspect of our care is designed to nurture the whole person —
-                body, mind, and spirit.
+                Every aspect of our care is designed to nurture the whole person
+                — body, mind, and spirit.
               </p>
             </div>
           </div>

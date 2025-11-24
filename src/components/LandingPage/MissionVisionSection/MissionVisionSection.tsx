@@ -11,7 +11,7 @@ const MissionVisionSection = () => {
             Mission, Vision & Values
           </h2>
           <div
-            className="w-20 h-1.5 mb-8 transition-all duration-300"
+            className="w-40 h-1.5 mb-8 transition-all duration-300"
             style={{ backgroundColor: "#55A9DC" }}
           ></div>
           <div className="max-w-4xl">
@@ -56,8 +56,8 @@ const MissionVisionSection = () => {
           <div className="space-y-10 lg:pt-4">
             {/* Mission Section */}
             <div className="space-y-5 pb-8 border-b border-gray-200">
-              <h4 className="text-xl uppercase tracking-wider font-sans font-semibold text-cascading-white">
-                OUR MISSION
+              <h4 className="text-xl tracking-wider text-[#4e9e45]">
+                Our Mission
               </h4>
               <p className="text-xl text-gray-300 leading-relaxed">
                 Our mission grows from a place of faith and deep compassion for
@@ -71,8 +71,8 @@ const MissionVisionSection = () => {
 
             {/* Vision Section */}
             <div className="space-y-5">
-              <h4 className="text-xl uppercase tracking-wider font-sans font-semibold text-cascading-white">
-                OUR VISION
+              <h4 className="text-xl tracking-wider text-[#4e9e45]">
+                Our Vision
               </h4>
               <p className="text-xl text-gray-300 leading-relaxed">
                 We envision a home where residents feel known, valued, and truly
