@@ -159,6 +159,8 @@ const GallerySection = () => {
               opts={{
                 align: "start",
                 loop: true,
+                dragFree: true,
+                containScroll: "trimSnaps",
               }}
               className="w-full"
             >
@@ -178,8 +180,8 @@ const GallerySection = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-0 md:-left-12" />
-              <CarouselNext className="right-0 md:-right-12" />
+              <CarouselPrevious className="hidden lg:flex left-0 md:-left-12" />
+              <CarouselNext className="hidden lg:flex right-0 md:-right-12" />
             </Carousel>
           </div>
         </div>
