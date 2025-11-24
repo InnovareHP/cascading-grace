@@ -52,7 +52,7 @@ const AboutHighlights = () => {
           className="space-y-12"
         >
           <div className="space-y-5 max-w-3xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight text-center sm:text-start">
               Compassionate Care for
               <br />
               <span className="text-[#4e9e45]">THOSE WHO MATTER MOST</span>
@@ -101,7 +101,7 @@ const AboutHighlights = () => {
           className="space-y-12"
         >
           <div className="space-y-5 w-full flex flex-col justify-end items-end">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight text-end">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight text-center sm:text-end">
               Built on Trust,
               <br />
               <span className="text-[#4e9e45]">ROOTED IN COMPASSION</span>
