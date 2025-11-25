@@ -12,6 +12,7 @@ import React, { useState } from "react";
 const galleryImages = [
   "/assets/image/gallery-images/gallery-1.jpg",
   "/assets/image/gallery-images/gallery-2.jpg",
+  "/assets/image/gallery-images/gallery-3.jpg",
   "/assets/image/gallery-images/gallery-4.jpg",
   "/assets/image/gallery-images/gallery-5.jpg",
   "/assets/image/gallery-images/gallery-6.jpg",
