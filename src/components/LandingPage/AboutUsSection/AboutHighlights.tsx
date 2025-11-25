@@ -43,7 +43,7 @@ const AboutHighlights = () => {
       {/* Subtle background decoration */}
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] pointer-events-none"></div>
 
-      <div className="container max-w-7xl mx-auto px-6 lg:px-8 space-y-32 relative">
+      <div className="container max-w-7xl mx-[5%] lg:mx-auto px-6 lg:px-8 space-y-32 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -11,7 +11,7 @@ const HeroSection = () => {
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/60 to-black/20" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-white flex flex-col gap-6">
+      <div className="relative z-10 max-w-7xl mx-[5%] lg:mx-auto px-6 py-24 text-white flex flex-col gap-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

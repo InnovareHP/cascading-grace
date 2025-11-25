@@ -1,7 +1,7 @@
 const AboutUsSection = () => {
   return (
     <section id="about-us" className="relative min-h-screen">
-      <div className="container py-28 max-w-6xl mx-auto px-6">
+      <div className="container py-28 max-w-6xl mx-[5%] lg:mx-auto px-6">
         <div className="mb-20 text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cascading-deep-navy ">
             About Us
@@ -75,7 +75,7 @@ const AboutUsSection = () => {
       </div>
 
       {/* new */}
-      <div className="bg-muted p-12 rounded-xl relative overflow-hidden  sm:h-[70vh] h-auto flex flex-col justify-center items-center ">
+      <div className="bg-muted p-12 mx-[5%] lg:mx-0 rounded-xl relative overflow-hidden  sm:h-[70vh] h-auto flex flex-col justify-center items-center ">
         {/* Shape Divider */}
         <div className="custom-shape-divider-top-1763973809 sm:block hidden">
           <svg

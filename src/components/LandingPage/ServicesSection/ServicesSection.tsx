@@ -256,7 +256,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 const ServicesSection = () => {
   return (
     <section className="py-20 px-6 bg-blue-900" id="services">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-[5%] lg:mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-cascading-white ">
             Services

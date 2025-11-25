@@ -4,7 +4,7 @@ const MissionVisionSection = () => {
       className="py-21 px-[1.575rem] lg:py-20 lg:px-6 bg-blue-900"
       id="mission-vision"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-[5%] lg:mx-auto">
         {/* Header */}
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-cascading-white flex items-center gap-4">

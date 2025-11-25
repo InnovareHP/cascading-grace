@@ -140,7 +140,7 @@ const GallerySection = () => {
         className="py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-blue-50"
         id="gallery"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-[5%] lg:mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-cascading-deep-navy">
               A Glimpse Into Our Home

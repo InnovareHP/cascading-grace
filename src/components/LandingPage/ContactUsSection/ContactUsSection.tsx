@@ -58,6 +58,7 @@ export default function ContactUsSection() {
       className="w-full bg-blue-900 py-20 px-6 md:px-16 lg:px-32 relative"
       id="contact-us"
     >
+      <div className="mx-[5%] lg:mx-0">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -239,6 +240,7 @@ export default function ContactUsSection() {
             </form>
           </Form>
         </motion.div>
+      </div>
       </div>
     </section>
   );
