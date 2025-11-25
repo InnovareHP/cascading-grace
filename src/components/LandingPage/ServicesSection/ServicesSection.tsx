@@ -161,7 +161,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     <>
       {/* Service Card */}
       <div
-        className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
+        className="relative aspect-[4/3] sm:aspect-square cursor-pointer group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
         onClick={() => setIsModalOpen(true)}
       >
         {/* Background Image Layer */}
@@ -205,37 +205,37 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       {/* Modal Dialog */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent
-          className="max-w-[calc(100%-2rem)] sm:max-w-[calc(100%-3rem)] md:max-w-3xl max-h-[90vh] p-0 border-2 border-[var(--cascading-medium-blue)] overflow-hidden shadow-2xl"
+          className="!left-6 !right-6 !top-[50%] !translate-y-[-50%] !translate-x-0 !w-auto !max-w-none sm:!left-6 sm:!right-6 md:!left-8 md:!right-8 lg:!left-[50%] lg:!right-auto lg:!translate-x-[-50%] lg:!max-w-3xl max-h-[95vh] sm:max-h-[90vh] p-0 border-2 border-[var(--cascading-medium-blue)] overflow-hidden shadow-2xl"
           showCloseButton={false}
         >
           <DialogHeader
-            className="p-6 pb-4 border-b-4 border-[var(--cascading-light-blue)] relative"
+            className="p-4 sm:p-6 pb-3 sm:pb-4 border-b-4 border-[var(--cascading-light-blue)] relative"
             style={{
               background: `linear-gradient(to right, var(--cascading-deep-navy), var(--cascading-medium-blue))`,
             }}
           >
-            <DialogTitle className="text-3xl font-bold text-cascading-white pr-10">
+            <DialogTitle className="text-xl sm:text-2xl md:text-3xl font-bold text-cascading-white pr-10 sm:pr-12 leading-tight">
               {service.title}
             </DialogTitle>
-            <DialogClose className="absolute top-4 right-4 rounded-full bg-white/10 hover:bg-white/20 text-cascading-white p-2 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cascading-light-blue focus:ring-offset-2 focus:ring-offset-transparent cursor-pointer">
-              <X className="h-5 w-5" />
+            <DialogClose className="absolute top-3 right-3 sm:top-4 sm:right-4 rounded-full bg-white/10 hover:bg-white/20 text-cascading-white p-1.5 sm:p-2 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cascading-light-blue focus:ring-offset-2 focus:ring-offset-transparent cursor-pointer">
+              <X className="h-4 w-4 sm:h-5 sm:w-5" />
               <span className="sr-only">Close</span>
             </DialogClose>
           </DialogHeader>
 
-          <ScrollArea className="max-h-[calc(90vh-120px)] px-6 py-4 bg-white">
-            <div className="pr-4">
-              <div className="space-y-4">
-                <p className="text-xl text-cascading-deep-navy leading-relaxed">
+          <ScrollArea className="max-h-[calc(95vh-100px)] sm:max-h-[calc(90vh-120px)] px-4 sm:px-6 py-3 sm:py-4 bg-white">
+            <div className="pr-2 sm:pr-4">
+              <div className="space-y-3 sm:space-y-4">
+                <p className="text-base sm:text-lg md:text-xl text-cascading-deep-navy leading-relaxed">
                   {service.content}
                 </p>
 
                 {service.bulletPoints && service.bulletPoints.length > 0 && (
-                  <div className="mt-4">
-                    <p className="font-semibold text-cascading-medium-blue mb-3 text-lg">
+                  <div className="mt-3 sm:mt-4">
+                    <p className="font-semibold text-cascading-medium-blue mb-2 sm:mb-3 text-base sm:text-lg">
                       {getSectionLabel(service.title)}
                     </p>
-                    <ul className="list-disc list-inside space-y-2 text-xl text-cascading-deep-navy pl-2">
+                    <ul className="list-disc list-inside space-y-1.5 sm:space-y-2 text-base sm:text-lg md:text-xl text-cascading-deep-navy pl-1 sm:pl-2">
                       {service.bulletPoints.map((point, idx) => (
                         <li key={idx} className="leading-relaxed">
                           {point}
