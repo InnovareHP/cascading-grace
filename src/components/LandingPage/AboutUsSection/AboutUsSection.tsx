@@ -36,7 +36,7 @@ const AboutUsSection = () => {
             <img
               src="/assets/image/LOGO-CascadingGrace.png"
               alt="Residents and caregivers"
-              className="rounded-xl object-cover w-full max-w-full lg:max-w-none h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px]"
+              className="rounded-xl object-cover w-full max-w-full lg:max-w-none h-full"
             />
           </div>
         </div>
