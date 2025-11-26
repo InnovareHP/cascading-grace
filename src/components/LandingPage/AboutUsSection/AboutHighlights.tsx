@@ -37,13 +37,13 @@ const AboutHighlights = () => {
 
   return (
     <section
-      className="py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden"
+      className="py-32 px-6 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative overflow-hidden"
       id="who-we-serve"
     >
       {/* Subtle background decoration */}
       <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] pointer-events-none"></div>
 
-      <div className="container max-w-7xl mx-[5%] lg:mx-auto px-6 lg:px-8 space-y-32 relative">
+      <div className="max-w-7xl mx-[5%] lg:mx-auto space-y-32 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ const AboutHighlights = () => {
               <br />
               <span className="text-[#4e9e45]">THOSE WHO MATTER MOST</span>
             </h2>
-            <p className="text-slate-600 max-w-2xl leading-relaxed">
+            <p className="text-xl text-gray-700 leading-relaxed max-w-2xl">
               Cascading Grace provides a nurturing, relationship-centered home
               environment, serving individuals with care, dignity, and
               personalized attention.
@@ -106,7 +106,7 @@ const AboutHighlights = () => {
               <br />
               <span className="text-[#4e9e45]">ROOTED IN COMPASSION</span>
             </h2>
-            <p className="text-slate-600 max-w-2xl leading-relaxed text-end">
+            <p className="text-xl text-gray-700 leading-relaxed max-w-2xl text-end">
               Families trust Cascading Grace because we offer more than care —
               we provide belonging, stability, and deep relational support, all
               within an intimate 6-resident home setting.
