@@ -34,21 +34,19 @@ const AboutUsSection = () => {
 
           <div className="flex justify-center lg:justify-start">
             <img
-              src="https://adagraceafc.com/_assets/media/f5cc2ee74d7ddaf5dae7bbd51815f6f5.png"
+              src="/assets/image/LOGO-CascadingGrace.png"
               alt="Residents and caregivers"
-              className="rounded-xl object-cover w-full max-w-full lg:max-w-none h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px]"
+              className="rounded-xl object-cover w-full max-w-full lg:max-w-none h-full"
             />
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center mb-20 md:mb-28">
-          <div className="flex justify-center lg:justify-start order-2 lg:order-1">
-            <img
-              src="https://adagraceafc.com/_assets/media/5d678b6b5632e9a07c1b4d2b7ab8fbd0.jpg"
-              alt="Cascading Grace Home"
-              className="rounded-xl object-cover w-full max-w-full lg:max-w-none h-[250px] sm:h-[350px] md:h-[400px] lg:h-[450px]"
-            />
-          </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-28">
+          <img
+            src="/assets/image/our_story_1.webp"
+            alt="Cascading Grace Home"
+            className="rounded-xl object-cover w-full h-[450px] order-2 lg:order-1"
+          />
 
           <div className="order-1 lg:order-2 flex flex-col space-y-4 md:space-y-6 text-center lg:text-left">
             <h2 className="text-3xl md:text-4xl mb-4 md:mb-6 text-[#4e9e45] ">
