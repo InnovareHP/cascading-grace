@@ -67,7 +67,7 @@ const MissionVisionSection = () => {
           <div className="space-y-10 lg:pt-4">
             {/* Mission Section */}
             <div className="space-y-5 pb-8 border-b border-gray-200">
-              <h4 className="text-xl tracking-wider text-[#4e9e45]">
+              <h4 className="text-2xl md:text-3xl font-bold tracking-wider text-white">
                 Our Mission
               </h4>
               <p className="text-xl text-gray-300 leading-relaxed">
@@ -82,7 +82,7 @@ const MissionVisionSection = () => {
 
             {/* Vision Section */}
             <div className="space-y-5">
-              <h4 className="text-xl tracking-wider text-[#4e9e45]">
+              <h4 className="text-2xl md:text-3xl font-bold tracking-wider text-white">
                 Our Vision
               </h4>
               <p className="text-xl text-gray-300 leading-relaxed">
