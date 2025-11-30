@@ -20,15 +20,15 @@ const HeroSection = () => {
         >
           <h1 className="text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-xl space-y-2">
             <span className="block">Welcome to</span>
-            <span className="block font-handwriting text-[#4e9e45] text-6xl md:text-8xl">
+            <span className="block font-handwriting text-[#1f5eab] text-6xl md:text-8xl">
               Cascading Grace
             </span>
           </h1>
 
           <p className="text-lg md:text-2xl text-gray-100 max-w-2xl leading-relaxed">
-            Cascading Grace is a warm and compassionate senior living community
-            dedicated to helping families find a place that truly feels like
-            home.
+            Cascading Grace is a warm and compassionate assisted living
+            community dedicated to helping families find a place that truly
+            feels like home.
           </p>
         </motion.div>
 
