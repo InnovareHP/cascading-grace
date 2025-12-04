@@ -20,7 +20,7 @@ const HeroSection = () => {
         >
           <h1 className="text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-xl space-y-2">
             <span className="block">Welcome to</span>
-            <span className="block font-handwriting text-[#1f5eab] text-6xl md:text-8xl">
+            <span className="block font-handwriting text-[#4a9eff] text-6xl md:text-8xl">
               Cascading Grace
             </span>
           </h1>
