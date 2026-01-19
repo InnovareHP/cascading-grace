@@ -8,7 +8,7 @@ import { z } from "zod";
 const zodSchema = z.object({
   name: z.string().min(1),
   email: z.email(),
-  phone: z.number().min(1),
+  phone: z.string().min(7),
   message: z.string().min(1),
 });
 

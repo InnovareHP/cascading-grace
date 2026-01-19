@@ -3,7 +3,7 @@ import axios from "axios";
 export const CreateContactEmail = async (
   name: string,
   email: string,
-  phone: number,
+  phone: string,
   message: string
 ) => {
   const response = await axios.post("/api/contact", {

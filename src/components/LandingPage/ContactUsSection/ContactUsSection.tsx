@@ -22,7 +22,7 @@ import { z } from "zod";
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
   email: z.email("Invalid email"),
-  phone: z.number().min(7, "Phone number is required"),
+  phone: z.string().min(7, "Phone number is required"),
   message: z.string().min(5, "Message must be at least 5 characters"),
 });
 
@@ -32,7 +32,7 @@ export default function ContactUsSection() {
     defaultValues: {
       name: "",
       email: "",
-      phone: 0,
+      phone: "",
       message: "",
     },
   });
