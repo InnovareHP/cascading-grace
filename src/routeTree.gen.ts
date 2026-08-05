@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
+import { Route as ApiCareerRouteImport } from './routes/api/career'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,30 +23,39 @@ const ApiContactRoute = ApiContactRouteImport.update({
   path: '/api/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCareerRoute = ApiCareerRouteImport.update({
+  id: '/api/career',
+  path: '/api/career',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api/career': typeof ApiCareerRoute
   '/api/contact': typeof ApiContactRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/career': typeof ApiCareerRoute
   '/api/contact': typeof ApiContactRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/api/career': typeof ApiCareerRoute
   '/api/contact': typeof ApiContactRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/contact'
+  fullPaths: '/' | '/api/career' | '/api/contact'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/contact'
-  id: '__root__' | '/' | '/api/contact'
+  to: '/' | '/api/career' | '/api/contact'
+  id: '__root__' | '/' | '/api/career' | '/api/contact'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApiCareerRoute: typeof ApiCareerRoute
   ApiContactRoute: typeof ApiContactRoute
 }
 
@@ -65,11 +75,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/career': {
+      id: '/api/career'
+      path: '/api/career'
+      fullPath: '/api/career'
+      preLoaderRoute: typeof ApiCareerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApiCareerRoute: ApiCareerRoute,
   ApiContactRoute: ApiContactRoute,
 }
 export const routeTree = rootRouteImport

@@ -1,5 +1,6 @@
 import AboutHighlights from "@/components/LandingPage/AboutUsSection/AboutHighlights";
 import AboutUsSection from "@/components/LandingPage/AboutUsSection/AboutUsSection";
+import CareersSection from "@/components/LandingPage/CareersSection/CareersSection";
 import ContactUsSection from "@/components/LandingPage/ContactUsSection/ContactUsSection";
 import GallerySection from "@/components/LandingPage/GallerySection/GallerySection";
 import HeroSection from "@/components/LandingPage/HeroSection/HeroSection";
@@ -18,6 +19,7 @@ function App() {
       <GallerySection />
       <MissionVisionSection />
       <AboutHighlights />
+      <CareersSection />
       <ContactUsSection />
     </>
   );
