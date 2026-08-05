@@ -1,19 +1,21 @@
 import axios from "axios";
 
-export const CreateCareerEmail = async (
-  name: string,
-  email: string,
-  phone: string,
-  position: string,
-  message: string
-) => {
-  const response = await axios.post("/api/career", {
-    name,
-    email,
-    phone,
-    position,
-    message,
-  });
+export type CareerResume = {
+  filename: string;
+  content: string;
+};
+
+export type CareerPayload = {
+  name: string;
+  email: string;
+  phone: string;
+  position: string;
+  message: string;
+  resume?: CareerResume;
+};
+
+export const CreateCareerEmail = async (payload: CareerPayload) => {
+  const response = await axios.post("/api/career", payload);
 
   if (response.status !== 200) {
     throw new Error("Failed to create career email");

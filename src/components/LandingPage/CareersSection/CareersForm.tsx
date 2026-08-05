@@ -19,6 +19,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
 import { CreateCareerEmail } from "@/services/career/career";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -31,15 +32,46 @@ export const POSITIONS = [
   "Other / General Application",
 ];
 
+// Keep in sync with MAX_RESUME_SIZE in routes/api/career.ts
+const MAX_RESUME_SIZE = 4 * 1024 * 1024;
+
+const ACCEPTED_RESUME_TYPES = [
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+];
+
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
   email: z.email("Invalid email"),
   phone: z.string().min(7, "Phone number is required"),
   position: z.string().min(1, "Please select a position"),
   message: z.string().min(5, "Tell us a bit about your experience"),
+  resume: z
+    .custom<File | undefined>()
+    .optional()
+    .refine(
+      (file) => !file || file.size <= MAX_RESUME_SIZE,
+      "Resume must be 4MB or smaller"
+    )
+    .refine(
+      (file) => !file || ACCEPTED_RESUME_TYPES.includes(file.type),
+      "Resume must be a PDF or Word document"
+    ),
 });
 
+const fileToBase64 = (file: File) =>
+  new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result).split(",")[1] ?? "");
+    reader.onerror = () => reject(new Error("Failed to read file"));
+    reader.readAsDataURL(file);
+  });
+
 const CareersForm = () => {
+  // Bumped on reset so the native file input clears its selection
+  const [fileInputKey, setFileInputKey] = useState(0);
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -48,20 +80,30 @@ const CareersForm = () => {
       phone: "",
       position: "",
       message: "",
+      resume: undefined,
     },
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await CreateCareerEmail(
-        values.name,
-        values.email,
-        values.phone,
-        values.position,
-        values.message
-      );
+      const resume = values.resume
+        ? {
+            filename: values.resume.name,
+            content: await fileToBase64(values.resume),
+          }
+        : undefined;
+
+      await CreateCareerEmail({
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        position: values.position,
+        message: values.message,
+        resume,
+      });
 
       form.reset();
+      setFileInputKey((key) => key + 1);
       toast.success("Application sent successfully");
     } catch (error) {
       toast.error("Failed to send application");
@@ -165,6 +207,34 @@ const CareersForm = () => {
                   {...field}
                   className="rounded-xl min-h-[150px] text-black"
                   placeholder="Tell us about your experience, certifications, and availability"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="resume"
+          render={({ field: { onChange, ref } }) => (
+            <FormItem>
+              <FormLabel className="text-black">
+                Resume{" "}
+                <span className="text-gray-500 font-normal">
+                  (PDF or Word, max 4MB)
+                </span>
+              </FormLabel>
+              <FormControl>
+                <Input
+                  key={fileInputKey}
+                  ref={ref}
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                  className="rounded-xl h-12 py-3 text-black file:text-black file:mr-4"
+                  onChange={(event) =>
+                    onChange(event.target.files?.[0] ?? undefined)
+                  }
                 />
               </FormControl>
               <FormMessage />

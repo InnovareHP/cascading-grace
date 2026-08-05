@@ -16,6 +16,7 @@ interface CareerSubmissionEmailProps {
   phone: string;
   position: string;
   message: string;
+  resumeName?: string;
 }
 
 export default function CareerSubmissionEmail({
@@ -24,6 +25,7 @@ export default function CareerSubmissionEmail({
   phone,
   position,
   message,
+  resumeName,
 }: CareerSubmissionEmailProps) {
   const previewText = `New career application from ${name} for ${position}`;
 
@@ -64,6 +66,11 @@ export default function CareerSubmissionEmail({
               <span className="font-semibold">Position:</span> {position}
             </Text>
 
+            <Text className="text-lg leading-relaxed text-gray-700">
+              <span className="font-semibold">Resume:</span>{" "}
+              {resumeName ? `${resumeName} (attached)` : "Not provided"}
+            </Text>
+
             <Section className="bg-gray-100 p-4 rounded-xl mt-6">
               <Text className="text-lg font-semibold text-gray-800 mb-1">
                 About the Applicant
@@ -101,4 +108,5 @@ CareerSubmissionEmail.PreviewProps = {
   phone: "+1 (555) 987-6543",
   position: "Caregiver",
   message: "I have 5 years of experience in residential care.",
+  resumeName: "jane-doe-resume.pdf",
 } as CareerSubmissionEmailProps;

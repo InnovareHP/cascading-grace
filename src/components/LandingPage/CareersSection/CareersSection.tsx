@@ -19,7 +19,7 @@ const CareersSection = () => {
     {
       icon: Mail,
       title: "Simple Application",
-      text: "Send us your resume by email — we review every message personally.",
+      text: "Attach your resume to the form below — we review every application personally.",
     },
   ];
 
@@ -93,7 +93,7 @@ const CareersSection = () => {
           <CareersForm />
 
           <p className="text-center text-gray-600">
-            Prefer to send a resume?{" "}
+            Prefer to email us directly?{" "}
             <a
               href={`mailto:${CAREERS_EMAIL}?subject=Career%20Inquiry%20-%20Cascading%20Grace`}
               className="font-semibold text-[#4e9e45] underline inline-flex items-center gap-1"

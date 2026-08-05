@@ -99,7 +99,7 @@ export default function ContactUsSection() {
                 <div>
                   <h4 className="font-semibold text-blue-800 text-lg">Email</h4>
                   <a
-                    href="mailto:info@yourcompany.com"
+                    href="mailto:smwcareservices@gmail.com"
                     className="text-blue-800 underline"
                   >
                     smwcareservices@gmail.com
@@ -115,7 +115,7 @@ export default function ContactUsSection() {
                 <div>
                   <h4 className="font-semibold text-blue-800 text-lg">Phone</h4>
                   <a
-                    href="tel:+15551234567"
+                    href="tel:+15742768612"
                     className="text-blue-800 underline"
                   >
                     574-276-8612

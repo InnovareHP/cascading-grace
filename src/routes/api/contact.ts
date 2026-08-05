@@ -35,7 +35,7 @@ export const Route = createFileRoute("/api/contact")({
 
         const response = await ResendService.emails.send({
           from: "contact@cascadinggrace.com",
-          to: ["swcareservices@gmail.com"],
+          to: ["smwcareservices@gmail.com"],
           subject: "Contact Form Submission from Cascading Grace",
           react: React.createElement(ContactSubmissionEmail, {
             name,
