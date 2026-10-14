@@ -78,7 +78,10 @@ export const Route = createRootRoute({
       { name: "apple-mobile-web-app-title", content: "Cascading Grace" },
     ],
 
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preload", as: "image", href: "/assets/image/hero-section.jpg" },
+    ],
   }),
 
   shellComponent: RootDocument,

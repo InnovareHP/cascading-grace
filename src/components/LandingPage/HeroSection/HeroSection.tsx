@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -12,12 +11,8 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/60 to-black/20" />
 
       <div className="relative z-10 max-w-7xl mx-[5%] lg:mx-auto px-6 py-24 text-white flex flex-col gap-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-4xl space-y-4"
-        >
+        {/* CSS animation, not framer-motion: runs before hydration so LCP is not blocked on JS */}
+        <div className="max-w-4xl space-y-4 animate-in fade-in slide-in-from-bottom-5 duration-700">
           <h1 className="text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-xl space-y-2">
             <span className="block">Welcome to</span>
             <span className="block font-handwriting text-[#4a9eff] text-6xl md:text-8xl">
@@ -30,14 +25,9 @@ const HeroSection = () => {
             community dedicated to helping families find a place that truly
             feels like home.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="pt-6 flex flex-wrap gap-4"
-        >
+        <div className="pt-6 flex flex-wrap gap-4 animate-in fade-in slide-in-from-bottom-5 duration-700 delay-200 fill-mode-backwards">
           <Button
             size="lg"
             className="rounded-2xl px-10 py-6 text-xl font-semibold text-white bg-[#4e9e45]"
@@ -45,7 +35,7 @@ const HeroSection = () => {
           >
             <a href="#contact-us">Schedule a Tour</a>
           </Button>
-        </motion.div>
+        </div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/80 to-transparent" />

@@ -62,6 +62,7 @@ const GalleryImage: React.FC<GalleryImageProps> = ({
             src={image}
             alt={`Gallery image ${index + 1}`}
             className="absolute opacity-0 pointer-events-none"
+            loading="lazy"
             onError={() => setImageError(true)}
           />
         )}
